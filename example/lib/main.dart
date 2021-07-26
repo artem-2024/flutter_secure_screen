@@ -1,4 +1,3 @@
-// @dart = 2.12
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -25,7 +24,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class HomeDemo extends StatefulWidget {
-  const HomeDemo({Key? key}) : super(key: key);
+  const HomeDemo({Key key}) : super(key: key);
 
   @override
   _HomeDemoState createState() => _HomeDemoState();
@@ -33,10 +32,10 @@ class HomeDemo extends StatefulWidget {
 
 class _HomeDemoState extends State<HomeDemo> {
   /// 录屏动作 暂只支持iOS
-  StreamSubscription<void>? _screenRecordListen;
+  StreamSubscription<void> _screenRecordListen;
 
   /// 截屏动作 暂只支持iOS
-  StreamSubscription<void>? _screenShotsListen;
+  StreamSubscription<void> _screenShotsListen;
 
   String _platformStateText = '未知设备';
   String _secureState = '允许截屏录屏';
@@ -91,7 +90,7 @@ class _HomeDemoState extends State<HomeDemo> {
             Visibility(
               visible: defaultTargetPlatform == TargetPlatform.android,
               child: Expanded(
-                child: TextButton(
+                child: FlatButton(
                   onPressed: () async {
                     await FlutterSecureScreen.singleton
                         .setAndroidScreenSecure(true);
@@ -106,7 +105,7 @@ class _HomeDemoState extends State<HomeDemo> {
             Visibility(
               visible: defaultTargetPlatform == TargetPlatform.android,
               child: Expanded(
-                child: TextButton(
+                child: FlatButton(
                     onPressed: () async {
                       FlutterSecureScreen.singleton.setAndroidScreenSecure(false);
                       setState(() {

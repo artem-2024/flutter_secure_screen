@@ -1,4 +1,3 @@
-// @dart = 2.12
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -28,19 +27,19 @@ class FlutterSecureScreen {
   }
 
   /// 方法桥
-  MethodChannel? _methodChannel;
+  MethodChannel _methodChannel;
 
   /// 截屏事件桥
-  EventChannel? _screenShotsEventChannel;
+  EventChannel _screenShotsEventChannel;
 
   /// 录屏事件桥
-  EventChannel? _screenRecordEventChannel;
+  EventChannel _screenRecordEventChannel;
 
   /// 截屏动作
-  Stream<void>? _onScreenShots;
+  Stream<void> _onScreenShots;
 
   /// 录屏动作
-  Stream<void>? _onScreenRecord;
+  Stream<void> _onScreenRecord;
 
   ///
   /// 获取监听截屏动作的[Stream]。用法：
@@ -50,7 +49,7 @@ class FlutterSecureScreen {
   ///   print("监听到了截屏动作");
   /// });
   /// ```
-  Stream<dynamic>? get onScreenShots {
+  Stream<dynamic> get onScreenShots {
     if (_onScreenShots == null) {
       _onScreenShots = _screenShotsEventChannel?.receiveBroadcastStream();
     }
@@ -65,7 +64,7 @@ class FlutterSecureScreen {
   ///   print("监听到了录屏动作");
   /// });
   /// ```
-  Stream<dynamic>? get onScreenRecord {
+  Stream<dynamic> get onScreenRecord {
     if (_onScreenRecord == null) {
       _onScreenRecord = _screenRecordEventChannel?.receiveBroadcastStream();
     }
