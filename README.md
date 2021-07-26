@@ -1,6 +1,6 @@
 # flutter_secure_screen
 
-A new flutter plugin project.
+提供iOS截屏录屏监控、禁用android设备的截屏录屏
 
 ## Getting Started
 
