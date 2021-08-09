@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 ///
-/// 截屏和录屏的动作监听（TODO 暂只支持iOS）、
+/// 截屏和录屏的动作监听（暂只支持iOS）、
 /// 禁止或允许android截屏和录屏
 ///
 class FlutterSecureScreen {
@@ -77,7 +77,7 @@ class FlutterSecureScreen {
       return await _methodChannel
           ?.invokeMethod("setAndroidScreenSecure", {"isSecure": isSecure});
     } else {
-      debugPrint('FlutterSecureScreen 仅Android平台支持禁用截屏和录屏');
+      debugPrint('FlutterSecureScreen 仅Android平台支持禁用截屏和录屏 / this method is only supported android');
       return null;
     }
   }
