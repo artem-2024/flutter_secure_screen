@@ -1,4 +1,3 @@
-// @dart = 2.12
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -54,18 +53,7 @@ class _HomeDemoState extends State<HomeDemo> {
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       _platformStateText = '当前为iOS设备';
     }
-
-    // if (Platform.isAndroid) {
-    //   checkPermission();
-    // }
   }
-
-  // void checkPermission() async {
-  //   await [
-  //     Permission.storage,
-  //   ].request();
-  //   //判断权限
-  // }
 
   @override
   void dispose() {
